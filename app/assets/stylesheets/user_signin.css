@@ -1,0 +1,41 @@
+.sign_in_form {
+  width: 50%;
+  margin-right: 25%;
+  margin-left: 25%;
+}
+
+.sign_up_links {
+  width: 50%;
+  margin-right: 25%;
+  margin-left: 25%;
+  padding-top: 20px;
+}
+
+#welcome-block {
+  padding: 35px;
+}
+
+body {
+  margin: 50px;
+  background-color: #efdecd;
+  background-attachment: fixed;
+}
+
+.top-bar {
+   background-color: #902e2e;
+   height: 60px;
+   border-bottom: 1px solid #FFFFFF;
+
+}
+
+.top-bar .name h1, .top-bar .name h2, .top-bar .name h3, .top-bar .name h4, .top-bar .name p, .top-bar .name span{
+  font-size: 1.2rem;
+}
+
+.top-bar-section li:not(.has-form) a:not(.button) {
+  background-color: #902e2e;
+}
+
+.top-bar-section ul li > a {
+  font-size: 1.2rem;
+}
