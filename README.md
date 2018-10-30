@@ -22,3 +22,4 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+[![Build Status](https://codeship.com/projects/9f282b20-bea6-0136-0d1f-726eb261e1d0/status?branch=master)
