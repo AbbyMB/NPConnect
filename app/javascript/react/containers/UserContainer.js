@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Route, IndexRoute, Router, browserHistory } from 'react-router';
 import UserShowHeader from '../components/UserShowHeader'
+import ProgramContainer from './ProgramContainer'
 
 class UserContainer extends Component {
   constructor(props) {
@@ -34,16 +35,16 @@ class UserContainer extends Component {
 
   render(){
     return(
-      <div>
+      <div className="text-highlight">
         <UserShowHeader
-          id={this.state.id}
+          userId={this.state.id}
           email={this.state.email}
           username={this.state.username}
           firstName={this.state.firstName}
           lastName={this.state.lastName}
         />
-        <FormContainer
-          id={this.state.id}
+        <ProgramContainer
+          userId={this.state.id}
         />
       </div>
     )
