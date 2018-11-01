@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import FormContainer from './FormContainer'
+import ProgramTile from '../components/ProgramTile'
 
 class ProgramContainer extends Component {
   constructor(props) {
@@ -9,6 +10,7 @@ class ProgramContainer extends Component {
     }
   this.addNewProgram = this.addNewProgram.bind(this)
   }
+
 
   addNewProgram(formPayLoad){
     fetch(`/api/v1/programs`, {
@@ -36,13 +38,49 @@ class ProgramContainer extends Component {
     })
   }
 
+  componentDidMount(){
+    let userId = this.props.userId
+    fetch(`/api/v1/users/${userId}/programs`)
+      .then(response => {
+        if (response.ok) {
+          return response;
+        } else {
+          let errorMessage = `${response.status} (${response.statusText})`,
+              error = new Error(errorMessage);
+          throw(error);
+        }
+      })
+      .then(response => response.json())
+      .then(body => {
+        this.setState({ programs: body });
+      })
+      .catch(error => console.error(`Error in fetch: ${error.message}`));
+  }
 
   render(){
+
+    let programs = this.state.programs.map(program => {
+      return(
+        <ProgramTile
+          key={program.id}
+          id={program.id}
+          name={program.name}
+          description={program.description}
+          category={program.category}
+        />
+      )
+    })
     return(
-      <FormContainer
-        addNewProgram={this.addNewProgram}
-        userId={this.props.userId}
-      />
+      <div className="row">
+        <div id="programContainer" className="small-6 columns">
+          <h4 id="myPrograms">My Programs:</h4>
+          {programs}
+          <FormContainer
+            addNewProgram={this.addNewProgram}
+            userId={this.props.userId}
+          />
+        </div>
+      </div>
     )
   }
 }
