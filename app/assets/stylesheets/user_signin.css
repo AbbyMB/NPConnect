@@ -42,7 +42,7 @@ a {
 .top-bar {
    background-color: #6f3d45;
    height: 60px;
-   border-bottom: 1px solid #FFFFFF;
+   /* border-bottom: 1px solid #FFFFFF; */
 
 }
 .top-bar .name h1, .top-bar .name h2, .top-bar .name h3, .top-bar .name h4, .top-bar .name p, .top-bar .name span{
