@@ -1,39 +1,43 @@
-<div class="text-highlight">
+<div id="text-highlight">
   <div id="welcome-block" class="row">
-    <div class="small-9 small-centered columns">
-      <h2 class="text-center">Welcome to Nonprofit Connect</h2>
+    <div class="small-10 small-centered columns">
+      <h2 id="font" class="text-center">Welcome to Nonprofit Connect</h2>
     </div>
     <div class="small-8 small-centered columns">
-      <h3 class="text-center">Where the Doers find the Dollars</h3>
+      <h3 id="font" class="text-center">Where the Doers find the Dollars</h3>
     </div>
     <div class="small-8 small-centered columns">
-      <h4 class="text-center">Please Log in or Sign up below</h4>
+      <h4 id="font" class="text-center">Please Log in or Sign up below</h4>
     </div>
   </div>
 
-  <div class="sign_in_form">
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-    </div>
+  <div id="welcome-block" class="row">
+    <div class="small-9 small-centered columns">
+      <div class="sign_in_form">
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="field">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        </div>
 
-    <div class="field">
-      <%= f.label :password %><br />
-      <%= f.password_field :password, autocomplete: "current-password" %>
-    </div>
+        <div class="field">
+          <%= f.label :password %><br />
+          <%= f.password_field :password, autocomplete: "current-password" %>
+        </div>
 
-    <% if devise_mapping.rememberable? -%>
-      <div class="field">
-        <%= f.check_box :remember_me %>
-        <%= f.label :remember_me %>
+        <% if devise_mapping.rememberable? -%>
+          <div class="field">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+          </div>
+        <% end -%>
+
+        <div class="actions">
+          <%= f.submit "Log in" %>
+        </div>
+      <% end %>
       </div>
-    <% end -%>
-
-    <div class="actions">
-      <%= f.submit "Log in" %>
     </div>
-  <% end %>
   </div>
 
   <div class="sign_up_links">

@@ -46,8 +46,8 @@ class FormContainer extends Component {
   render(){
     return(
       <div className="row">
-        <div className="small-6">
-          <form onSubmit={this.handleSubmit}>
+        <div className="small-10">
+          <form  id="form" onSubmit={this.handleSubmit}>
             <h4>Add A Program</h4>
             <label>
               Program Name:
