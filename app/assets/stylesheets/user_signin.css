@@ -13,13 +13,15 @@
   background-image: url("leaves.png");
   padding: 50px;
   font-family: 'Spicy Rice', cursive;
+  border-radius: 50px;
 
 }
 h3 {
   font-family: 'Spicy Rice', cursive;
 }
 #welcome-block {
-  padding: 35px;
+  padding-top: 25px;
+  padding-bottom: 25px;
   background-color: #f0e2bf;
 
 }
@@ -27,7 +29,10 @@ h3 {
 
 }
 body {
-  margin: 75px;
+  margin-left: 60px;
+  margin-right: 60px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   background-attachment: fixed;
   background-color: #b29176;
 }
@@ -42,6 +47,8 @@ a {
 .top-bar {
    background-color: #6f3d45;
    height: 60px;
+   border-radius: 25px;
+   padding: 7px;
    /* border-bottom: 1px solid #FFFFFF; */
 
 }
@@ -82,4 +89,8 @@ a {
 p {
   font-family: 'Krub', sans-serif;
   margin-bottom: 0.25rem;
+}
+
+#favoriteHeart {
+  padding: 5px;
 }

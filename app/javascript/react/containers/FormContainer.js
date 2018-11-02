@@ -37,7 +37,6 @@ class FormContainer extends Component {
         name: this.state.name,
         description: this.state.description,
         category: this.state.category,
-        user_id: this.props.userId
       }
       this.props.addNewProgram(formPayLoad)
       this.handleClearForm()
@@ -78,6 +77,7 @@ class FormContainer extends Component {
                 <option value="social justice">social justice</option>
                 <option value="housing">housing</option>
                 <option value="environmental">environmental</option>
+                <option value="youth development">youth development</option>
               </select>
             </label>
             <button className="button">
@@ -89,8 +89,5 @@ class FormContainer extends Component {
     )
   }
 }
-
-
-
 
 export default FormContainer;

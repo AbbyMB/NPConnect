@@ -12,7 +12,6 @@ class ProgramTile extends Component {
   }
 
   toggleProjectTile() {
-
     if (this.state.clickedOpen === false) {
       this.setState({ clickedOpen: true, iconClass: "fas fa-angle-double-up", showStatus: "" })
     } else {
