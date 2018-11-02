@@ -17,8 +17,7 @@ ActiveRecord::Schema.define(version: 2018_11_01_143118) do
 
   create_table "funders", force: :cascade do |t|
     t.string "title", null: false
-    t.string "description", null: false
-    t.string "organization", null: false
+    t.text "description", null: false
     t.string "url", null: false
     t.string "category", null: false
     t.datetime "created_at", null: false

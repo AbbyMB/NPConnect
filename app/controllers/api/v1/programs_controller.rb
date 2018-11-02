@@ -1,4 +1,6 @@
 class Api::V1::ProgramsController < ApplicationController
+  protect_from_forgery unless: -> {request.format.json?}
+
   def index
     render json: Program.all
   end

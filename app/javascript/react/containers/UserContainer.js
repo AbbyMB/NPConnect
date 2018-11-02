@@ -1,22 +1,20 @@
 import React, { Component } from 'react';
-import { Route, IndexRoute, Router, browserHistory } from 'react-router';
+import FormContainer from './FormContainer'
+import ProgramTile from '../components/ProgramTile'
 import UserShowHeader from '../components/UserShowHeader'
-import ProgramContainer from './ProgramContainer'
 
 class UserContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: null,
-      email: "",
-      username: "",
-      firstName: "",
-      lastName: ""
+      programs: []
     }
+  this.addNewProgram = this.addNewProgram.bind(this)
   }
 
-  componentDidMount() {
-    fetch('/api/v1/current_user')
+  componentDidMount(){
+    let userId = window.currentUser.id
+    fetch(`/api/v1/users/${userId}`)
       .then(response => {
         if (response.ok) {
           return response;
@@ -28,27 +26,64 @@ class UserContainer extends Component {
       })
       .then(response => response.json())
       .then(body => {
-        this.setState({ id: body.id, username: body.username, email: body.email, firstName: body.first_name, lastName: body.last_name });
+        this.setState({ programs: body.user.programs });
+      })
+      .catch(error => console.error(`Error in fetch: ${error.message}`));
+  }
+
+  addNewProgram(formPayLoad){
+    let userId = window.currentUser.id
+    fetch(`/api/v1/users/${userId}/programs`, {
+      method: 'POST',
+      body: JSON.stringify(formPayLoad),
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      credentials: 'same-origin'
+    })
+    .then(response => {
+      if (response.ok) {
+        return response;
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`,
+            error = new Error(errorMessage);
+        throw(error);
       }
-    )
+    })
+    .then(response => response.json())
+    .then(newProgram => {
+      let allPrograms = this.state.programs
+      let addedProgram = newProgram.program
+      this.setState({ programs: allPrograms.concat(addedProgram)})
+    })
+    .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   render(){
+    let programs = this.state.programs.map(program => {
+      return(
+        <ProgramTile
+          key={program.id}
+          id={program.id}
+          name={program.name}
+          description={program.description}
+          category={program.category}
+        />
+      )
+    })
     return(
-      <div className="text-highlight">
-        <UserShowHeader
-          userId={this.state.id}
-          email={this.state.email}
-          username={this.state.username}
-          firstName={this.state.firstName}
-          lastName={this.state.lastName}
-        />
-        <ProgramContainer
-          userId={this.state.id}
-        />
+      <div className="row">
+        <UserShowHeader />
+        <div id="programContainer" className="small-6 columns">
+          <h4 id="myPrograms">My Programs:</h4>
+          {programs}
+          <FormContainer
+            addNewProgram={this.addNewProgram}
+          />
+        </div>
       </div>
     )
   }
 }
-
 export default UserContainer;
