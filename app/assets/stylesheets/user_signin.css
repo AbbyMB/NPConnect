@@ -1,3 +1,6 @@
+#addProgram {
+  padding-left: 15px;
+}
 #sign_in_form {
   padding: 35px;
   background-color: #f0e2bf;
@@ -25,9 +28,7 @@ h3 {
   background-color: #f0e2bf;
 
 }
-#font {
 
-}
 body {
   margin-left: 60px;
   margin-right: 60px;
@@ -63,7 +64,7 @@ a {
 .top-bar-section ul li > a {
   font-size: 1.2rem;
 }
-#project-arrow {
+#icon {
   padding: 10px;
 }
 #programContainer {
@@ -71,17 +72,20 @@ a {
   border-radius: 30px;
   padding-top: 10px;
 }
-#myPrograms {
+#favoritesContainer {
+  background-color: #f0e2bf;
+  border-radius: 30px;
+  padding-top: 10px;
+}
+h4 {
   padding: 10px;
   font-size: 2rem;
   text-decoration: underline;
   text-align: center;
-}
-#form {
-  padding: 20px;
+  background-color: #f0e2bf;
 }
 
-#programName {
+h6 {
   font-size: 1.4rem;
   font-family: 'Fjalla One', sans-serif;
 }

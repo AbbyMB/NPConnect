@@ -45,28 +45,30 @@ class FormContainer extends Component {
   render(){
     return(
       <div className="row">
-        <div className="small-10">
-          <form  id="form" onSubmit={this.handleSubmit}>
+        <div className="small-10" id="addProgram">
+          <form onSubmit={this.handleSubmit}>
             <h4>Add A Program</h4>
-            <label>
+            <label className="addProgram">
               Program Name:
               <input
+                className="addProgram"
                 type="text"
                 onChange={this.handleNameChange}
                 value={this.state.name}
                  />
             </label>
-            <label>
+            <label className="addProgram">
               Program Description:
               <input
+                className="addProgram"
                 type="text"
                 onChange={this.handleDescriptionChange}
                 value={this.state.description}
                  />
             </label>
-            <label>
+            <label className="addProgram">
               Program Focus:
-              <select onChange={this.handleCategoryChange} value={this.state.category}>
+              <select className="addProgram" onChange={this.handleCategoryChange} value={this.state.category}>
                 <option value="select category">Select category</option>
                 <option value="education">education</option>
                 <option value="child health">child health</option>
