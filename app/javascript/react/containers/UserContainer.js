@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import FormContainer from './FormContainer'
 import ProgramTile from '../components/ProgramTile'
 import UserShowHeader from '../components/UserShowHeader'
+import UserFavoriteTile from '../components/UserFavoriteTile'
 
 class UserContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      programs: []
+      programs: [],
+      favorites: []
     }
   this.addNewProgram = this.addNewProgram.bind(this)
   }
@@ -26,7 +28,7 @@ class UserContainer extends Component {
       })
       .then(response => response.json())
       .then(body => {
-        this.setState({ programs: body.user.programs });
+        this.setState({ programs: body.user.programs, favorites: body.user.favorites });
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
@@ -72,15 +74,31 @@ class UserContainer extends Component {
         />
       )
     })
+    let favorites = this.state.favorites.map(favorite => {
+      return(
+        <UserFavoriteTile
+          key={favorite.funder.id}
+          id={favorite.funder.id}
+          title={favorite.funder.title}
+          description={favorite.funder.description}
+          url={favorite.funder.url}
+          category={favorite.funder.category}
+        />
+      )
+    })
     return(
       <div className="row">
         <UserShowHeader />
-        <div id="programContainer" className="small-6 columns">
+        <div id="programContainer" className="small-5 columns">
           <h4 id="myPrograms">My Programs:</h4>
           {programs}
           <FormContainer
             addNewProgram={this.addNewProgram}
           />
+        </div>
+        <div id="favoritesContainer" className="small-5 columns">
+          <h4 id="myFavorites">My Funder Favorites:</h4>
+          {favorites}
         </div>
       </div>
     )

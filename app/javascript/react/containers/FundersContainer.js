@@ -34,6 +34,7 @@ class FundersContainer extends Component {
       return(
         <FunderTile
           key={funder.id}
+          id={funder.id}
           title={funder.title}
           description={funder.description}
           url={funder.url}

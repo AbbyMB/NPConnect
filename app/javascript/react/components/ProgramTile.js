@@ -24,7 +24,7 @@ class ProgramTile extends Component {
 
     return(
       <div>
-        <h6 id="programName" onClick={this.toggleProjectTile}><i id="project-arrow" className={this.state.iconClass}></i>{this.props.name}</h6>
+        <h6 onClick={this.toggleProjectTile}><i id="icon" className={this.state.iconClass}></i>{this.props.name}</h6>
         <p className={this.state.showStatus}>Description: {this.props.description}</p>
         <p className={this.state.showStatus}>#{this.props.category}</p>
       </div>
