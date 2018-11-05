@@ -1,88 +1,103 @@
+
 #addProgram {
   padding-left: 15px;
 }
+#pageContainer {
+  background-color: #E8DEDC;
+  opacity: 0.8;
+}
+#programPageContainer{
+  background-color: #E8DEDC;
+  opacity: 0.85;
+  text-align: center;
+  width: 100%;
+}
+#funderPageContainer{
+  background-color: #E8DEDC;
+  opacity: 0.85;
+  text-align: center;
+  width: 100%;
+}
+#router{
+  padding-right: 10px;
+}
+
+#navbar{
+  background-color: gray;
+  padding-left: 10px;
+  opacity: 0.85;
+  display: flex;
+  width: 100%
+}
+#welcome-name{
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+body {
+  width: 75%;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-image: url("mural.jpg");
+}
+
 #sign_in_form {
   padding: 35px;
-  background-color: #f0e2bf;
 }
 
 .sign_up_links {
-  width: 75%;
-  padding-top: 20px;
-
+  background-color: #E8DEDC;
+  opacity: 0.85;
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-bottom: 10px;
 }
-#text-highlight {
-  background-color: #f0e2bf;
-  background-image: url("leaves.png");
+
+#signinPageContainer {
+  background-color: #E8DEDC;
+  opacity: 0.85;
   padding: 50px;
-  font-family: 'Spicy Rice', cursive;
+  font-family: 'Fjalla One', sans-serif;
   border-radius: 50px;
 
-}
-h3 {
-  font-family: 'Spicy Rice', cursive;
 }
 #welcome-block {
   padding-top: 25px;
   padding-bottom: 25px;
-  background-color: #f0e2bf;
-
+  background-color: #E8DEDC;
+  opacity: 0.85;
 }
-
-body {
-  margin-left: 60px;
-  margin-right: 60px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  background-attachment: fixed;
-  background-color: #b29176;
+h3 {
+  font-family: 'Fjalla One', sans-serif;
 }
 
 a {
-  color: #6f3d45;
+  color: black;
 }
 .button {
-  background-color: #6f3d45;
-  border-radius: 50px;
-}
-.top-bar {
-   background-color: #6f3d45;
-   height: 60px;
-   border-radius: 25px;
-   padding: 7px;
-   /* border-bottom: 1px solid #FFFFFF; */
-
-}
-.top-bar .name h1, .top-bar .name h2, .top-bar .name h3, .top-bar .name h4, .top-bar .name p, .top-bar .name span{
-  font-size: 1.2rem;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
-.top-bar-section li:not(.has-form) a:not(.button) {
-  background-color: #6f3d45;
-}
-
-.top-bar-section ul li > a {
-  font-size: 1.2rem;
-}
 #icon {
   padding: 10px;
 }
 #programContainer {
-  background-color: #f0e2bf;
-  border-radius: 30px;
   padding-top: 10px;
 }
 #favoritesContainer {
-  background-color: #f0e2bf;
-  border-radius: 30px;
   padding-top: 10px;
 }
+
 h4 {
   padding: 10px;
   font-size: 2rem;
   text-decoration: underline;
   text-align: center;
-  background-color: #f0e2bf;
+  font-family: 'Fjalla One', sans-serif;
 }
 
 h6 {
@@ -93,8 +108,4 @@ h6 {
 p {
   font-family: 'Krub', sans-serif;
   margin-bottom: 0.25rem;
-}
-
-#favoriteHeart {
-  padding: 5px;
 }

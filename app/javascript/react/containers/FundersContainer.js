@@ -8,7 +8,8 @@ class FundersContainer extends Component {
     this.state = {
       funders: [],
       searchedFunders: [],
-      searchedCategory: 'select category'
+      searchedCategory: 'select category',
+      favoriteFunderIds: []
     }
   this.handleSearchSubmit = this.handleSearchSubmit.bind(this)
   this.handleCategoryChange = this.handleCategoryChange.bind(this)
@@ -29,6 +30,22 @@ class FundersContainer extends Component {
       .then(response => response.json())
       .then(body => {
         this.setState({ funders: body.funders });
+      })
+      .catch(error => console.error(`Error in fetch: ${error.message}`));
+
+    fetch(`/api/v1/current_user/current_user_favorites`)
+      .then(response => {
+        if (response.ok) {
+          return response;
+        } else {
+          let errorMessage = `${response.status} (${response.statusText})`,
+              error = new Error(errorMessage);
+          throw(error);
+        }
+      })
+      .then(response => response.json())
+      .then(body => {
+        this.setState({ favoriteFunderIds: body });
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
@@ -69,8 +86,10 @@ class FundersContainer extends Component {
 
   render(){
     let funders = this.state.funders.map(funder => {
+      let isFavorite = this.state.favoriteFunderIds.includes(funder.id)
       return(
         <FunderTile
+          isFavorite={isFavorite}
           key={funder.id}
           id={funder.id}
           title={funder.title}
@@ -83,8 +102,8 @@ class FundersContainer extends Component {
 
     return(
       <div>
-        <div className="row" id="funderText">
-          <div className="small-8 small-centered columns">
+        <div className="row">
+          <div className="small-8 small-centered columns" id="funderPageContainer">
             <h3>Funders:</h3>
             <h5>Search Funders By Category</h5>
             <form onSubmit={this.handleSearchSubmit}>
