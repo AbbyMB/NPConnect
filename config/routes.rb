@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :homes, only: :index
   resources :users, only: :show
   resources :funders, only: :index
+  resources :programs, only: :index
 
   namespace :api do
     namespace :v1 do
@@ -15,10 +16,13 @@ Rails.application.routes.draw do
         resources :programs, only: [ :index, :show, :create ]
         resources :favorites, only: [ :index, :create ] do
           resources :funders, only: :index
-        end 
+        end
       end
-      resources :current_user, only: [ :index ]
-      resources :programs, only: [ :index, :show ]
+      resource :current_user, only: [ :show ] do
+        resources :current_user_favorites, only: :index 
+      end
+
+      resources :programs, only: [ :index ]
     end
   end
 end

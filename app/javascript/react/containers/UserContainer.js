@@ -88,17 +88,19 @@ class UserContainer extends Component {
     })
     return(
       <div className="row">
-        <UserShowHeader />
-        <div id="programContainer" className="small-5 columns">
-          <h4 id="myPrograms">My Programs:</h4>
-          {programs}
-          <FormContainer
-            addNewProgram={this.addNewProgram}
-          />
-        </div>
-        <div id="favoritesContainer" className="small-5 columns">
-          <h4 id="myFavorites">My Funder Favorites:</h4>
-          {favorites}
+        <div className="small-12 columns" id="pageContainer">
+          <UserShowHeader />
+          <div id="programContainer" className="small-5 columns">
+            <h4 id="myPrograms">My Programs:</h4>
+            {programs}
+            <FormContainer
+              addNewProgram={this.addNewProgram}
+            />
+          </div>
+          <div id="favoritesContainer" className="small-5 columns">
+            <h4 id="myFavorites">My Funder Favorites:</h4>
+            {favorites}
+          </div>
         </div>
       </div>
     )

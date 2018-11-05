@@ -4,8 +4,7 @@ class FunderTile extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      favorite: "",
-      iconClass: "far fa-heart",
+      favorite: props.isFavorite,
       showStatus: "hide",
       clickedOpen: false
     }
@@ -47,21 +46,27 @@ class FunderTile extends Component {
     .then(response => response.json())
     .then(body => {
       if (body.favorited === true){
-        this.setState({ favorite: true, iconClass: "fas fa-heart" })
+        this.setState({ favorite: true })
       } else {
-      this.setState({ favorite: false, iconClass: "far fa-heart" })
+      this.setState({ favorite: false })
       }
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   render(){
+    let heartIcon;
+    if (this.state.favorite){
+      heartIcon = "fas fa-heart"
+    } else {
+      heartIcon = "far fa-heart"
+    }
 
     return(
       <div>
           <li onClick={this.toggleFunderView}>{this.props.title}</li>
           <p>#{this.props.category}</p>
-          <i id="favoriteHeart" className={this.state.iconClass} onClick={this.createFavorite}></i>
+          <i id="favoriteHeart" className={heartIcon} onClick={this.createFavorite}></i>
           <p className={this.state.showStatus}>{this.props.description}</p>
           <a href={this.props.url} className={this.state.showStatus} target="_blank">{this.props.url}</a>
       </div>

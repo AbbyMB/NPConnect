@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>BreakToy</title>
+  <title>NPConnect</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <link href="https://fonts.googleapis.com/css?family=Spicy+Rice" type="text/css" rel="stylesheet">
@@ -17,7 +17,7 @@
   <nav class="top-bar">
     <ul class="title-area">
       <li class="name">
-        <h1><a href="/">BreakToy</a></h1>
+        <h1><a id="app-name"href="/">NPConnect</a></h1>
       </li>
     </ul>
 
@@ -26,8 +26,8 @@
         <%- if current_user -%>
           <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
         <%- else -%>
-          <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-          <li><%= link_to 'Sign In', new_user_session_path %></li>
+          <li className="sign-in"><%= link_to 'Sign Up', new_user_registration_path %></li>
+          <li className="sign-in"><%= link_to 'Sign In', new_user_session_path %></li>
         <%- end -%>
       </ul>
     </section>
@@ -48,7 +48,7 @@
       window.railsEnv = '<%= Rails.env %>'
     <%- end -%>
   <%- end -%>
-  
+
   <%- if current_user -%>
     <%= javascript_tag do %>
       window.currentUser = <%== current_user.to_json %>
