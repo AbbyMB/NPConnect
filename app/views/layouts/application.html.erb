@@ -13,6 +13,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <script src=<%="https://maps.googleapis.com/maps/api/js?key=#{ENV["GOOGLE_API_KEY"]}"%>
+    async defer></script>
 
   <nav class="top-bar">
     <ul class="title-area">
