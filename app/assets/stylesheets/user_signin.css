@@ -1,6 +1,11 @@
-
 #addProgram {
   padding-left: 15px;
+}
+#allPrograms{
+  background-color: #E8DEDC;
+  opacity: 0.85;
+  text-align: center;
+  width: 100%;
 }
 #pageContainer {
   background-color: #E8DEDC;
@@ -11,12 +16,43 @@
   opacity: 0.85;
   text-align: center;
   width: 100%;
+  padding-top: 10px;
+}
+#programIndexContainer{
+  background-color: #E8DEDC;
+  opacity: 0.85;
+  text-align: center;
+  width: 100%;
+  padding-top: 10px;
+}
+#programIndexTile{
+  background-color: #E8DEDC;
+  opacity: 0.85;
+  text-align: center;
+  width: 100%;
+  padding-top: 10px;
+
+}
+#programs{
+  background-color: #E8DEDC;
+  opacity: 0.85;
+  text-align: center;
+  width: 100%;
+  padding-top: 10px;
 }
 #funderPageContainer{
   background-color: #E8DEDC;
   opacity: 0.85;
   text-align: center;
   width: 100%;
+  padding-top: 10px;
+}
+.sign-in {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background-color: #E8DEDC;
+    opacity: 0.85;
+    font-family: 'Fjalla One', sans-serif;
 }
 #router{
   padding-right: 10px;
@@ -70,9 +106,6 @@ body {
   background-color: #E8DEDC;
   opacity: 0.85;
 }
-h3 {
-  font-family: 'Fjalla One', sans-serif;
-}
 
 a {
   color: black;
@@ -108,4 +141,13 @@ h6 {
 p {
   font-family: 'Krub', sans-serif;
   margin-bottom: 0.25rem;
+}
+
+#map{
+  height: 100%;
+}
+
+#flash{
+  background-color: #E8DEDC;
+  opacity: 0.85;
 }

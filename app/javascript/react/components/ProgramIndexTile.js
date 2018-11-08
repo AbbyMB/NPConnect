@@ -22,7 +22,7 @@ class ProgramIndexTile extends Component {
 
   render(){
     return(
-      <div>
+      <div id="programIndexTile">
         <h6 onClick={this.toggleProjectTile}><i id="icon" className={this.state.iconClass}></i>{this.props.name}</h6>
         <p className={this.state.showStatus}>Description: {this.props.description}</p>
         <p className={this.state.showStatus}>#{this.props.category}</p>

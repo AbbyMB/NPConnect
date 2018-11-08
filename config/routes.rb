@@ -19,9 +19,9 @@ Rails.application.routes.draw do
         end
       end
       resource :current_user, only: [ :show ] do
-        resources :current_user_favorites, only: :index 
+        resources :current_user_favorites, only: :index
       end
-
+      resource :searchs, only: [ :show ]
       resources :programs, only: [ :index ]
     end
   end

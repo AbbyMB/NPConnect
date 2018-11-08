@@ -6,10 +6,12 @@ class FormContainer extends Component {
     this.state = {
       name: '',
       description: '',
+      address:'',
       category: 'select category'
     }
   this.handleNameChange = this.handleNameChange.bind(this)
   this.handleDescriptionChange = this.handleDescriptionChange.bind(this)
+  this.handleAddressChange = this.handleAddressChange.bind(this)
   this.handleCategoryChange = this.handleCategoryChange.bind(this)
   this.handleClearForm = this.handleClearForm.bind(this)
   this.handleSubmit = this.handleSubmit.bind(this)
@@ -21,6 +23,9 @@ class FormContainer extends Component {
   handleDescriptionChange(event){
     this.setState({ description: event.target.value})
   }
+  handleAddressChange(event){
+    this.setState({ address: event.target.value})
+  }
   handleCategoryChange(event){
     this.setState({ category: event.target.value})
   }
@@ -28,6 +33,7 @@ class FormContainer extends Component {
     this.setState({
       name: '',
       description: '',
+      address: '',
       category: 'select category'
     })
   }
@@ -36,7 +42,8 @@ class FormContainer extends Component {
       let formPayLoad = {
         name: this.state.name,
         description: this.state.description,
-        category: this.state.category,
+        address: this.state.address,
+        category: this.state.category
       }
       this.props.addNewProgram(formPayLoad)
       this.handleClearForm()
@@ -64,6 +71,15 @@ class FormContainer extends Component {
                 type="text"
                 onChange={this.handleDescriptionChange}
                 value={this.state.description}
+                 />
+            </label>
+            <label className="addProgram">
+              Program Address:
+              <input
+                className="addProgram"
+                type="text"
+                onChange={this.handleAddressChange}
+                value={this.state.address}
                  />
             </label>
             <label className="addProgram">

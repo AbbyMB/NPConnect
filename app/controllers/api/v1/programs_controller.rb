@@ -16,7 +16,7 @@ class Api::V1::ProgramsController < ApplicationController
   end
 
   def program_params
-    params.require(:program).permit(:name, :description, :category, :user_id)
+    params.require(:program).permit(:name, :description, :address, :category, :user_id)
   end
 
 end
