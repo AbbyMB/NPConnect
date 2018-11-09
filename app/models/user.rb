@@ -8,7 +8,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :programs
+  has_many :created_programs,
+    class_name: "Program",
+    foreign_key: "owner_id"
   has_many :favorites
-  has_many :funders, through: :favorites  
+  has_many :funders, through: :favorites
+  has_many :partnerships
+  has_many :programs, through: :partnerships
 end

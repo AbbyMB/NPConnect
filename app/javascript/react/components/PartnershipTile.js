@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class ProgramTile extends Component {
+class PartnershipTile extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -32,4 +32,4 @@ class ProgramTile extends Component {
   }
 }
 
-export default ProgramTile;
+export default PartnershipTile;

@@ -10,7 +10,8 @@ class ProgramsContainer extends Component {
       programs: [],
       searchedAddress: '',
       mileage: 0,
-      searchedPrograms: []
+      searchedPrograms: [],
+      partnershipProgramIds: []
     }
   this.handleAddressSearch = this.handleAddressSearch.bind(this)
   this.handleMileageChange = this.handleMileageChange.bind(this)
@@ -93,15 +94,21 @@ class ProgramsContainer extends Component {
       })
       .then(response => response.json())
       .then(body => {
-        this.setState({ programs: body.programs });
+        this.setState({
+          programs: body.programs,
+          partnershipProgramIds: body.partnerships
+       });
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
+
   }
 
   render(){
     let allPrograms = this.state.programs.map(program => {
+      let isPartnership = this.state.partnershipProgramIds.includes(program.id)
       return(
         <ProgramIndexTile
+          isPartnership={isPartnership}
           key={program.id}
           id={program.id}
           name={program.name}
@@ -114,7 +121,7 @@ class ProgramsContainer extends Component {
     <div id="programIndexContainer">
       <div className="row">
         <div className="small-8 small-centered columns">
-          <h3>Programs:</h3>
+          <h3 id="programsHeader">Programs:</h3>
           <h5>Find Programs Near You:</h5>
             <form onSubmit={this.handleSubmit}>
               <p>Enter Address</p>

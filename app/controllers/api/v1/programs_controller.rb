@@ -2,12 +2,15 @@ class Api::V1::ProgramsController < ApplicationController
   protect_from_forgery unless: -> {request.format.json?}
 
   def index
-    render json: Program.all
+    render json: {
+      programs: Program.all,
+      partnerships: current_user.programs.pluck(:id)
+    } 
   end
 
   def create
     @program = Program.new(program_params)
-    @program.user = current_user
+    @program.owner = current_user
     if @program.save
       render json: {program: @program}
     else
@@ -16,7 +19,7 @@ class Api::V1::ProgramsController < ApplicationController
   end
 
   def program_params
-    params.require(:program).permit(:name, :description, :address, :category, :user_id)
+    params.require(:program).permit(:name, :description, :address, :category, :owner_id)
   end
 
 end
