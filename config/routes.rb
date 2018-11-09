@@ -17,12 +17,16 @@ Rails.application.routes.draw do
         resources :favorites, only: [ :index, :create ] do
           resources :funders, only: :index
         end
+        resources :partnerships, only: [ :index, :create ]
       end
       resource :current_user, only: [ :show ] do
         resources :current_user_favorites, only: :index
+        resources :current_user_partnerships, only: :index
       end
       resource :searchs, only: [ :show ]
-      resources :programs, only: [ :index ]
+      resources :programs, only: [ :index ] do
+        resources :partnerships, only: [ :index, :create ]
+      end
     end
   end
-end
+end 

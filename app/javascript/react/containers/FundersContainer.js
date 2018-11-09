@@ -45,7 +45,7 @@ class FundersContainer extends Component {
       })
       .then(response => response.json())
       .then(body => {
-        this.setState({ favoriteFunderIds: body });
+        this.setState({ favoriteFunderIds: body.favorite_funders });
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
   }

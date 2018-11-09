@@ -1,11 +1,23 @@
 #addProgram {
   padding-left: 15px;
+  padding-top: 50px;
 }
 #allPrograms{
   background-color: #E8DEDC;
   opacity: 0.85;
   text-align: center;
   width: 100%;
+}
+#programsHeader{
+  font-size: 2.2rem;
+  font-family: serif;
+  width: 30%;
+  margin-left: 35%;
+  margin-right: 35%
+}
+#partnershipsContainer{
+  padding-top: 25px;
+  text-align: center;
 }
 #pageContainer {
   background-color: #E8DEDC;
@@ -23,7 +35,8 @@
   opacity: 0.85;
   text-align: center;
   width: 100%;
-  padding-top: 10px;
+  padding-top: 20px;
+  padding-bottom: 25%
 }
 #programIndexTile{
   background-color: #E8DEDC;
@@ -31,21 +44,15 @@
   text-align: center;
   width: 100%;
   padding-top: 10px;
+}
 
-}
-#programs{
-  background-color: #E8DEDC;
-  opacity: 0.85;
-  text-align: center;
-  width: 100%;
-  padding-top: 10px;
-}
 #funderPageContainer{
   background-color: #E8DEDC;
   opacity: 0.85;
   text-align: center;
   width: 100%;
-  padding-top: 10px;
+  padding-top: 20px;
+  padding-bottom: 25px
 }
 .sign-in {
     padding-top: 25px;
@@ -111,8 +118,8 @@ a {
   color: black;
 }
 .button {
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 7px;
+  background-color: black;
 }
 
 #icon {
@@ -120,9 +127,17 @@ a {
 }
 #programContainer {
   padding-top: 10px;
+  text-align: center;
 }
 #favoritesContainer {
   padding-top: 10px;
+  float:right;
+}
+#profileContainer{
+  background-color: #E8DEDC;
+  opacity: 0.85;
+  padding-left: 25px;
+  padding-right: 25px;
 }
 
 h4 {
@@ -138,16 +153,25 @@ h6 {
   font-family: 'Fjalla One', sans-serif;
 }
 
+#programIndexTile {
+  font-size: 1.4rem;
+  font-family: 'Fjalla One', sans-serif;
+  width: 60%;
+  margin-left: 20%;
+  margin-right: 20%
+}
+
 p {
   font-family: 'Krub', sans-serif;
   margin-bottom: 0.25rem;
+  font-size: large;
+  font-weight: bold;
+}
+li{
+  font-size: large
 }
 
-#map{
-  height: 100%;
-}
-
-#flash{
+.flash{
   background-color: #E8DEDC;
   opacity: 0.85;
 }

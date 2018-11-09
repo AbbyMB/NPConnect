@@ -6,5 +6,9 @@ class Program < ApplicationRecord
   validates :category, presence: true
   validates :address, presence: true
 
-  belongs_to :user
+  belongs_to :owner,
+    class_name: 'User',
+    foreign_key: 'owner_id'
+  has_many :partnerships
+  has_many :users, through: :partnerships
 end
