@@ -147,7 +147,7 @@ body {
   margin-right: 15%;
   margin-top: 5%;
   margin-bottom: 15%;
-  background-image: url("brick-mural.png");
+  background-image: image-url("brick-mural.png");
 }
 
 #sign_in_form {
@@ -226,7 +226,4 @@ p {
 #welcome-block{
   background-color: rgba(255, 255, 255, 0.8);
   padding-top: 30px;
-}
-.actions{
-
 }
