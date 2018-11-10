@@ -122,7 +122,7 @@ class ProgramsContainer extends Component {
       <div className="row">
         <div className="small-8 small-centered columns">
           <h3 id="programsHeader">Programs:</h3>
-          <h5>Find Programs Near You:</h5>
+          <h5 id="findPrograms">Find Programs Near You:</h5>
             <form onSubmit={this.handleSubmit}>
               <p>Enter Address</p>
               <label>
@@ -143,7 +143,7 @@ class ProgramsContainer extends Component {
                 Search
               </button>
             </form>
-            <button onClick={this.handleReset} className="button">
+            <button id="reset" onClick={this.handleReset} className="button">
             Reset
             </button>
             <div id="allPrograms">

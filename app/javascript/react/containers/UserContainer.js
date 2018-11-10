@@ -101,7 +101,7 @@ class UserContainer extends Component {
     })
     return(
       <div className="row" id="profileContainer">
-        <div className="small-12 columns" id="pageContainer">
+        <div className="small-12 columns">
           <UserShowHeader />
         </div>
         <div className="row">
