@@ -57,14 +57,14 @@ class FunderTile extends Component {
   render(){
     let heartIcon;
     if (this.state.favorite){
-      heartIcon = "fas fa-heart"
+      heartIcon = "fas fa-heart fa-lg"
     } else {
-      heartIcon = "far fa-heart"
+      heartIcon = "far fa-heart fa-lg"
     }
 
     return(
-      <div>
-          <li onClick={this.toggleFunderView}>{this.props.title}</li>
+      <div id="funderTile">
+          <h5 id="funderList" onClick={this.toggleFunderView}>{this.props.title}</h5>
           <p>#{this.props.category}</p>
           <i id="favoriteHeart" className={heartIcon} onClick={this.createFavorite}></i>
           <p className={this.state.showStatus}>{this.props.description}</p>

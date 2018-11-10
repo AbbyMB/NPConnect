@@ -104,10 +104,9 @@ class FundersContainer extends Component {
       <div>
         <div className="row">
           <div className="small-8 small-centered columns" id="funderPageContainer">
-            <h3>Funders:</h3>
-            <h5>Search Funders By Category</h5>
+            <h3 id="fundersHeader">Funders</h3>
             <form onSubmit={this.handleSearchSubmit}>
-              <label>
+              <label id="funderFormLabel">
                 Search by Category:
                 <select onChange={this.handleCategoryChange} value={this.state.searchedCategory}>
                   <option value="select category">Select category</option>

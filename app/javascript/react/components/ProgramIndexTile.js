@@ -59,9 +59,9 @@ class ProgramIndexTile extends Component {
   render(){
     let handshakeIcon;
     if (this.state.partnership){
-      handshakeIcon = "fas fa-handshake fa-lg"
+      handshakeIcon = "fas fa-handshake fa-2x"
     } else {
-      handshakeIcon = "far fa-handshake fa-lg"
+      handshakeIcon = "far fa-handshake fa-2x"
     }
     return(
       <div id="programIndexTile">
