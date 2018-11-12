@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Partnership, type: :model do
   describe "valid partnership" do
     let!(:user) { User.create(email: "bob@bob.com", password: "888888", username: "bobG100", first_name: "Bob", last_name: "Green") }
-    let!(:program) { Program.create(name: "Project Help", description: "Provides help and support", category: "Child Welfare", owner_id: user.id, address: "330 Homer Street Newton, MA 02459", lat: 133333333, lng: 11111122222) }
+    let!(:program) { Program.create(name: "YMCA", description: "A place you can go when you're short on your dough", category: "Housing", owner_id: user.id, address: "35 Commonwealth Ave Newton, MA 02467", lat: 42.339808, lng: -71.1681131) }
 
     it "Is valid with attributes" do
       partnership_new = Partnership.new(user_id: user.id, program_id: program.id)
