@@ -29,23 +29,10 @@ class FundersContainer extends Component {
       })
       .then(response => response.json())
       .then(body => {
-        this.setState({ funders: body.funders });
-      })
-      .catch(error => console.error(`Error in fetch: ${error.message}`));
-
-    fetch(`/api/v1/current_user/current_user_favorites`)
-      .then(response => {
-        if (response.ok) {
-          return response;
-        } else {
-          let errorMessage = `${response.status} (${response.statusText})`,
-              error = new Error(errorMessage);
-          throw(error);
-        }
-      })
-      .then(response => response.json())
-      .then(body => {
-        this.setState({ favoriteFunderIds: body.favorite_funders });
+        this.setState({
+          funders: body.funders,
+          favoriteFunderIds: body.favorite_funders
+         });
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
