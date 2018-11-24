@@ -1,7 +1,7 @@
 # require 'rails_helper'
-#***Codeship vs. Geocoder issue to be resolved. Uncomment to run test**
+# #***Codeship vs. Geocoder issue to be resolved. Uncomment to run test**
 #
-#RSpec.describe Program, type: :model do
+# RSpec.describe Program, type: :model do
 #   describe "valid program" do
 #     let!(:user) { User.create(email: "bob@bob.com", password: "888888", username: "bobG100", first_name: "Bob", last_name: "Green") }
 #

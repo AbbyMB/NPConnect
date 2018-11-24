@@ -1,7 +1,7 @@
 # require 'rails_helper'
-#***Codeship vs. Geocoder issue to be resolved. Uncomment to run test**
+# #***Codeship vs. Geocoder issue to be resolved. Uncomment to run test**
 #
-#RSpec.describe Partnership, type: :model do
+# RSpec.describe Partnership, type: :model do
 #   describe "valid partnership" do
 #     let!(:user) { User.create(email: "bob@bob.com", password: "888888", username: "bobG100", first_name: "Bob", last_name: "Green") }
 #     let!(:program) { Program.create(name: "YMCA", description: "A place you can go when you're short on your dough", category: "Housing", owner_id: user.id, address: "35 Commonwealth Ave Newton, MA 02467", lat: 42.339808, lng: -71.1681131) }
