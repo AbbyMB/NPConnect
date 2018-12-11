@@ -86,17 +86,17 @@ class FormContainer extends Component {
               Program Focus:
               <select className="addProgram" onChange={this.handleCategoryChange} value={this.state.category}>
                 <option value="select category">Select category</option>
-                <option value="Education">education</option>
-                <option value="Health">child health</option>
-                <option value="Child Welfare">child welfare</option>
-                <option value="Food Assistance">food assistance</option>
-                <option value="Elder Services">elder services</option>
-                <option value="Community Development">youth development</option>
-                <option value="Transportation">transportation</option>
-                <option value="Social Justice">social justice</option>
-                <option value="Housing">housing</option>
-                <option value="Environmental">environmental</option>
-                <option value="Youth Development">youth development</option>
+                <option value="education">education</option>
+                <option value="health">child health</option>
+                <option value="child welfare">child welfare</option>
+                <option value="food assistance">food assistance</option>
+                <option value="elder services">elder services</option>
+                <option value="community development">youth development</option>
+                <option value="transportation">transportation</option>
+                <option value="social justice">social justice</option>
+                <option value="housing">housing</option>
+                <option value="environmental">environmental</option>
+                <option value="youth development">youth development</option>
               </select>
             </label>
             <button className="button">

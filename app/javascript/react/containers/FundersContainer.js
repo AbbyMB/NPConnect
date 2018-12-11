@@ -97,16 +97,17 @@ class FundersContainer extends Component {
                 Search by Category:
                 <select onChange={this.handleCategoryChange} value={this.state.searchedCategory}>
                   <option value="select category">Select category</option>
-                  <option value="education">Education</option>
-                  <option value="child health">Child Health</option>
-                  <option value="child welfare">Child Welfare</option>
-                  <option value="food assistance">Food Assistance</option>
-                  <option value="elder services">Elder Services</option>
-                  <option value="transportation">Transportation</option>
-                  <option value="social justice">Social Justice</option>
-                  <option value="housing">Housing</option>
-                  <option value="environmental">Environmental</option>
-                  <option value="youth development">Youth Development</option>
+                  <option value="education">education</option>
+                  <option value="child health">child health</option>
+                  <option value="health">health</option>
+                  <option value="child welfare">child welfare</option>
+                  <option value="food assistance">food assistance</option>
+                  <option value="elder services">elder services</option>
+                  <option value="transportation">transportation</option>
+                  <option value="social justice">social justice</option>
+                  <option value="housing">housing</option>
+                  <option value="environmental">environmental</option>
+                  <option value="youth development">youth development</option>
                 </select>
               </label>
               <button className="button">
